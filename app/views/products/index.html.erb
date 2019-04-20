@@ -1,5 +1,5 @@
 <% @products.each do |product| %>
-  <%= render partial: "product", locals: {post: product} %>
+  <%= render partial: "product", locals: {product: product} %>
 <% end %>
 
 <script type="text/javascript" charset="utf-8">
@@ -7,7 +7,7 @@
     $(document.body).on('click', '.js-more', function() {
       let id = $(this).data("id");
       $(this).replaceWith('<button class="js-less" data-id="'+id+'">Less...</button>');
-      $.get("/posts/" + id + "/body", function(data) {
+      $.get("/products/" + id + "/body", function(data) {
         // Replace text of body-id div
         $("#body-" + id).text(data);
       });
@@ -17,7 +17,7 @@
         let id = $(this).data("id");
         console.log(id);
         $(this).replaceWith('<button class="js-more" data-id="'+id+'">More...</button>');
-        $.get("/posts/" + id + "/body", function(data) {
+        $.get("/products/" + id + "/body", function(data) {
           // rsp = < %= escape_javascript(truncate(data)) % >;
           // Replace text of body-id div
           $("#body-" + id).text(data.substring(0, 27)+"...");
