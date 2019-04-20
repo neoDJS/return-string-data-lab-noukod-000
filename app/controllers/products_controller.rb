@@ -16,7 +16,7 @@ class ProductsController < ApplicationController
 
   def inventory
     product = Product.find(params[:id])
-    render plain: !!product.inventory
+    render plain: !!!product.inventory
   end
 
 end
