@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
   def create
     @product = product.create(product_params)
     @product.save
-    redirect_to products_path(@product)
+    redirect_to products_path
   end
 
   def body
