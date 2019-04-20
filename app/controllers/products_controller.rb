@@ -5,6 +5,9 @@ class ProductsController < ApplicationController
 
   def new
   end
+  
+  def create
+  end
 
   def body
     product = Product.find(params[:id])
