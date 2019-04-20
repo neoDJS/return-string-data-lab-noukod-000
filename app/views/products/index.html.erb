@@ -7,7 +7,7 @@
     $(document.body).on('click', '.js-more', function() {
       let id = $(this).data("id");
       $(this).replaceWith('<button class="js-less" data-id="'+id+'">Less...</button>');
-      $.get("/products/" + id + "/body", function(data) {
+      $.get("/products/" + id + "/description", function(data) {
         // Replace text of body-id div
         $("#body-" + id).text(data);
       });
@@ -17,7 +17,7 @@
         let id = $(this).data("id");
         console.log(id);
         $(this).replaceWith('<button class="js-more" data-id="'+id+'">More...</button>');
-        $.get("/products/" + id + "/body", function(data) {
+        $.get("/products/" + id + "/description", function(data) {
           // rsp = < %= escape_javascript(truncate(data)) % >;
           // Replace text of body-id div
           $("#body-" + id).text(data.substring(0, 27)+"...");
