@@ -6,4 +6,9 @@ class ProductsController < ApplicationController
   def new
   end
 
+  def body
+    post = Post.find(params[:id])
+    render plain: post.description
+  end
+
 end
