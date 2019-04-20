@@ -3,4 +3,7 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def new
+  end
+
 end
