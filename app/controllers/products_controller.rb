@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
   end
 
   def create
-    product = product.create(product_params)
+    product = Product.create(product_params)
     product.save
     redirect_to products_path
   end
